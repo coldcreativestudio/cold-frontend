@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Hunter 3000</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <aside>
+        <div class="logo">❄️ COLD<span>HUNTER</span></div>
+        <nav>
+            <a href="#" class="active" data-page="dashboard">📊 Dashboard</a>
+            <a href="#" data-page="leads">🎯 Leads</a>
+            <a href="#" id="logoutBtn">🚪 Sair</a>
+        </nav>
+    </aside>
+    <main>
+        <header>
+            <div class="header-title">
+                <h1>Visão Geral</h1>
+                <p>Acompanhe o funil de prospecção.</p>
+            </div>
+            <button class="btn-primary" id="startScrapingBtn">🚀 Raspar Agora</button>
+        </header>
+        <section class="metrics">
+            <div class="metric-card"><span>Total Leads</span><h2 id="totalLeads">0</h2></div>
+            <div class="metric-card"><span>Sem Site (Quentes)</span><h2 id="leadsSemSite" class="text-primary">0</h2></div>
+            <div class="metric-card"><span>Fechados</span><h2 id="leadsFechados" class="text-success">0</h2></div>
+            <div class="metric-card"><span>Receita Gerada</span><h2 id="receitaTotal">R$ 0</h2></div>
+        </section>
+        <section class="charts-container">
+            <div class="chart-box">
+                <canvas id="conversionChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="leadsByDayChart"></canvas>
+            </div>
+        </section>
+        <section class="filters">
+            <select id="filterNiche"><option value="">Todos os Nichos</option></select>
+            <select id="filterStatus"><option value="">Todos os Status</option><option value="novo">Novo</option><option value="contatado">Contatado</option></select>
+            <input type="text" id="searchLead" placeholder="Buscar lead...">
+        </section>
+        <section class="leads-container" id="leadsList">
+            </section>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
