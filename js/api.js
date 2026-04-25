@@ -1,4 +1,4 @@
-const API_URL = 'https://cold-hunter-api.onrender.com//api';
+const API_URL = 'https://cold-hunter-api.onrender.com/api';
 
 const api = {
     getToken: () => localStorage.getItem('token'),
